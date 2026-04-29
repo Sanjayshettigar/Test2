@@ -1,0 +1,15 @@
+<h2>Students with 'O' Grade</h2>
+<table border="1">
+    <tr><th>Name</th><th>USN</th><th>Subject</th><th>Grade</th></tr>
+    {% for s in students %}
+    <tr>
+        <td>{{ s.name }}</td>
+        <td>{{ s.usn }}</td>
+        <td>{{ s.subject }}</td>
+        <td>{{ s.grade }}</td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="4">No students with 'O' grade</td></tr>
+    {% endfor %}
+</table>
+<a href="{% url 'add_student' %}">Add Student</a>

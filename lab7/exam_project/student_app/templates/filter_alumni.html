@@ -1,0 +1,24 @@
+<h2>Search Alumni by Passing Year</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Search</button>
+</form>
+
+{% if alumni %}
+<h3>Results</h3>
+<table border="1">
+    <tr><th>Name</th><th>USN</th><th>Year</th><th>Company</th></tr>
+    {% for a in alumni %}
+    <tr>
+        <td>{{ a.name }}</td>
+        <td>{{ a.usn }}</td>
+        <td>{{ a.passing_year }}</td>
+        <td>{{ a.company }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>No alumni found for this year.</p>
+{% endif %}
+<br><a href="{% url 'add_alumni' %}">Add New Alumni</a>

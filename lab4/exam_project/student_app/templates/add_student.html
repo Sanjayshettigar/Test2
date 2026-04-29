@@ -1,0 +1,7 @@
+<h2>Add Student Placement</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+<a href="{% url 'amazon_list' %}">View Amazon Placements</a>

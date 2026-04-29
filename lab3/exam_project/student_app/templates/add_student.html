@@ -1,0 +1,7 @@
+<h2>Add Student Details</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+<a href="{% url 'grade_list' %}">View 'O' Grade Students</a>

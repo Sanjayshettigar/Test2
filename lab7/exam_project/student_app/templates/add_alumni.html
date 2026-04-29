@@ -1,0 +1,7 @@
+<h2>Add Alumni</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+<br><a href="{% url 'filter_alumni' %}">Filter by Year</a>
